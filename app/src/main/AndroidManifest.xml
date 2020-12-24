@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Navigation">
         <activity android:name=".MainActivity"/>
-
+        <activity android:name=".authentification.Login" />
         <activity android:name=".authentification.registrationForm" />
         <activity
             android:name=".activity2"
