@@ -14,13 +14,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+
 import com.example.navigation.Database.StoreDatabase;
 import com.example.navigation.R;
 
 import static com.example.navigation.Database.StoreDatabase.COLUMN_USER_EMAIL;
 import static com.example.navigation.Database.StoreDatabase.COLUMN_USER_NAME;
 import static com.example.navigation.Database.StoreDatabase.COLUMN_USER_PASSWORD;
-import static com.example.navigation.Database.StoreDatabase.TABLE_USERS;
+import static com.example.navigation.Database.StoreDatabase.TABLE_STUDENTS;
 
 public class Login extends AppCompatActivity implements View.OnClickListener{
 
@@ -61,7 +62,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 password.setError("Fill again");
                 return;
             }
-            Cursor userCursor = sqdb.rawQuery("SELECT * FROM" + TABLE_USERS +
+            Cursor userCursor = sqdb.rawQuery("SELECT * FROM" + TABLE_STUDENTS +
                     "WHERE" + COLUMN_USER_EMAIL+  "=? AND "+COLUMN_USER_PASSWORD +"=?",new String[]{email.getText().toString(), password.getText().toString()});
 
             if(((userCursor != null) &&(userCursor.getCount()>0))){

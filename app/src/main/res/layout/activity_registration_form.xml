@@ -56,6 +56,55 @@
             android:ems="10"
             android:inputType="textEmailAddress"
             android:hint="email" />
+        <TextView
+            android:id="@+id/editStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="your group"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <Spinner
+            android:id="@+id/groupSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            />
+        <TextView
+            android:id="@+id/cityStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="your city"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <Spinner
+            android:id="@+id/citySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+        <TextView
+            android:id="@+id/text_view_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Where do you live?"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:onClick="chechButton"/>
+            <RadioButton
+                android:id="@+id/dorm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dormitary"
+                android:onClick="chechButton"/>
+        </RadioGroup>
         <Button
 
             android:id="@+id/buttonenter"
