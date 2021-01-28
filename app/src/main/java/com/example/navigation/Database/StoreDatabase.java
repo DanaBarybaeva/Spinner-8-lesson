@@ -15,7 +15,8 @@ import com.example.navigation.R;
 public class StoreDatabase extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "lessondatabase.db";
-    public static final int DATABASE_VERSION = 3;
+    public static final int DATABASE_VERSION = 6;
+
     public static final String TABLE_STUDENTS = "students";
     public static final String TABLE_GROUPS = "user_group";
     public static final String TABLE_CITY = "user_city";
@@ -59,7 +60,8 @@ public class StoreDatabase extends SQLiteOpenHelper {
                 COLUMN_SUM+"TEXT)");
         db.execSQL("CREATE TABLE CITY" + TABLE_CITY + "("+
                 COLUMN_CITY_ID + "TEXT," +
-
+                COLUMN_STUDENT_GROUP_ID + "TEXT," +
+                COLUMN_USER_NAME + "TEXT," +
                 COLUMN_CITY+"TEXT)");
 
 
@@ -80,37 +82,26 @@ public class StoreDatabase extends SQLiteOpenHelper {
         group1.put(COLUMN_USER_NAME, "IT");
         group1.put(COLUMN_SUM, 25);
         group1.put(COLUMN_STUDENT_GROUP_ID, "3e");
+        group1.put(COLUMN_CITY, "Almaty");
+        group1.put(COLUMN_CITY_ID, "02");
         db.insert(TABLE_GROUPS,null,group1);
 
         ContentValues group2 = new ContentValues();
         group2.put(COLUMN_USER_NAME, "smm");
         group2.put(COLUMN_SUM, 24);
         group2.put(COLUMN_STUDENT_GROUP_ID, "3f");
+        group2.put(COLUMN_CITY, "Taraz");
+        group2.put(COLUMN_CITY_ID, "08");
         db.insert(TABLE_GROUPS,null,group2);
 
         ContentValues group3 = new ContentValues();
         group3.put(COLUMN_USER_NAME, "is");
         group3.put(COLUMN_SUM, 24);
         group3.put(COLUMN_STUDENT_GROUP_ID, "3a");
+        group3.put(COLUMN_CITY, "Shymkent");
+        group3.put(COLUMN_CITY_ID, "13");
         db.insert(TABLE_GROUPS,null,group3);
 
     }
-    public void initCity(SQLiteDatabase db){
-        ContentValues city1 = new ContentValues();
-        city1.put(COLUMN_CITY, "Almaty");
-        city1.put(COLUMN_CITY_ID, "02");
 
-        db.insert(TABLE_CITY,null,city1);
-
-        ContentValues city2 = new ContentValues();
-        city2.put(COLUMN_CITY, "Taraz");
-        city2.put(COLUMN_CITY_ID, "08");
-
-        db.insert(TABLE_CITY,null,city2);
-
-        ContentValues city3 = new ContentValues();
-        city3.put(COLUMN_CITY, "Shymkent");
-        city3.put(COLUMN_CITY_ID, "13");
-
-        db.insert(TABLE_CITY,null,city3);}
 }
